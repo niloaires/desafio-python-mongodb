@@ -55,30 +55,20 @@ Na REST API teremos um CRUD com os seguintes endpoints:
  - `GET /products`: Listar todos os produtos da base de dados, adicionar sistema de paginação para não sobrecarregar o `REQUEST`.
 
 Ao terminar os endpoints, configurar os testes usando Pytest.
- 
-## [Bônus] Front-End 
-Escolher um Framework: (React.js)[], (Angular)[https://angular.io/] ou (Vue.js)[https://vuejs.org/] 
 
 
-#### Listar alimentos
- 
-Criar uma tela com uma tabela que lista todos alimentos do banco de dados, os campos que mais importam são:
- 
-        - Nome
-        - Tipo
-        - Criado
-        - Ações (Botões Ver)
-  
-#### Ver alimentos
+## [Bônus] DevOps
 
-Para visualizar os alimentos, usaremos diretamente o projeto Open Food Facts, para isso é importante aprender a montar a URL:
+Depois de um árduo trabalho de desenvolvimento na API chegou a hora mais esperada, 
+o lançamento do projeto, é uma das partes mais motivadoras verdade? Então, a equipe de administração de 
+sistemas precisará dos mínimos detalhes para configurar o projeto em produção, 
+por isso é sua responsabilidade documentar todo o fluxo e facilitar a configuração dos dois projetos com 
+tecnologias chaves para rodar em ambientes de Cloud Computing. 
 
-- https://br.openfoodfacts.org/produto/{code}
+Para isso deveremos configurar:
 
-
-Por exemplo:
-
-- https://br.openfoodfacts.org/produto/0737628064502
+- Dockerfile
+- Docker compose para executar o projeto em ambiente local
 
 
 ## Readme do Repositório
