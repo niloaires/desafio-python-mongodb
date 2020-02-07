@@ -3,16 +3,16 @@
 
 ## Introdução
 
-Nesse desafio trabalharemos no desenvolvimento de uma REST API para utilizar a informação do projeto Open Food Facts, que é uma base de datos aberta com informações nutricional de diversos produtos alimentícios.
+Nesse desafio trabalharemos no desenvolvimento de uma REST API para utilizar os dados do projeto Open Food Facts, que é um banco de datos aberto com informação nutricional de diversos produtos alimentícios.
 
-O projeto tem como objetivo dar suporte a equipe de nutricionista da empresa Fitness Foods LC para que eles possam revisar de maneira rápida a informação nutriconal dos alimentos.
+O projeto tem como objetivo dar suporte a equipe de nutricionistas da empresa Fitness Foods LC para que eles possam revisar de maneira rápida a informação nutricional dos alimentos que os usuários enviam pela aplicação móvel.
 
 ### Obrigatório
  
 - Trabalhar em um FORK deste repositório em seu usuário;
 - O projeto back-end deverá ser desenvolvido usando Python com o framework Django;
-- Configurar os testes usando Pytest
-- Documentação para configuração do projeto em ambientes de produção
+- Configurar os testes usando Pytest;
+- Documentação para configuração do projeto em ambientes de produção;
  
 
 ## O projeto
@@ -25,14 +25,14 @@ O projeto tem como objetivo dar suporte a equipe de nutricionista da empresa Fit
 
 ### Modelo de Datos:
 
-Para a definição do modelo, consultar o arquivo [products.json](./products.json) que foi exportado do Open Food Facts, um detalhe importante é temos dois novos campos para poder fazer o controle interno e que deverão ser aplicado em todos os alimentos que forem importados:
+Para a definição do modelo, consultar o arquivo [products.json](./products.json) que foi exportado do Open Food Facts, um detalhe importante é que temos dois campos personalizados para poder fazer o controle interno do sistema e que deverão ser aplicados em todos os alimentos no momento da importação, os campos são:
 
-- `imported_t`, campo do tipo Date com a dia e hora que foi importado para base.
-- `status`, campo do tipo Enum com os possíveis valors: draft, trash, published
+- `imported_t`: campo do tipo Date com a dia e hora que foi importado;
+- `status`: campo do tipo Enum com os possíveis valores draft, trash e published;
 
 ### Sistema do CRON
 
-Para proseguir com o desafio, precisaremos criar na API um sistema de atualização que vai atualizar os datos do MongoDb com a versão mais recente do [Open Food Facts](https://br.openfoodfacts.org/data).
+Para proseguir com o desafio, precisaremos criar na API um sistema de atualização que vai importar os datos para MongoDb com a versão mais recente do [Open Food Facts](https://br.openfoodfacts.org/data) uma vez ao día. Adicionar nos arquivos de configuração o melhor horário para executar a importação.
 
 A lista de arquivos do Open Food, pode ser encontra em: 
 
@@ -42,8 +42,7 @@ Onde cada linha representa um arquivo que está disponível em https://static.op
 
 É recomendavél utilizar uma Collection secundária para controlar os históricos das importações e facilitar a validação durante a execução.
 
-
-Nota: Importante lembrar que todos os dados deverão ter os campos personalizados `imported_t`, `status`.
+Nota: Importante lembrar que todos os dados deverão ter os campos personalizados `imported_t` e `status`.
 
 ### A REST API
 
@@ -56,13 +55,12 @@ Na REST API teremos um CRUD com os seguientes endpoints:
  - `GET /products`: Listar todos os produtos da base de dados, adicionar sistema de paginação para não sobrecargar o `REQUEST`.
 
 Ao terminar os endpoints, configurar os tests usando Pytest.
-
  
 ## [Bonus] Front-End
  
 #### Listar alimentos
  
-Criar uma sessão na tela com uma tabela para listar os alimentos processados pela API. É importante ter os seguintes campos:
+Criar uma tela com uma tabela que lista todos alimentos do banco de dados, os campos que mais importam são:
  
         - Nome
         - Tipo
