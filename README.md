@@ -11,8 +11,8 @@ O projeto tem como objetivo dar suporte a equipe de nutricionistas da empresa Fi
  
 - Trabalhar em um FORK deste repositório em seu usuário;
 - O projeto back-end deverá ser desenvolvido usando Python com o framework Django;
-- Configurar os testes usando Pytest;
-- Documentação para configuração do projeto em ambientes de produção;
+- Configurar os testes usando Pytest ou alguma lib de sua preferência;
+- Documentação para configuração do projeto em ambientes de produção (instalações, executar, referências e etc);
  
 
 ## O projeto
@@ -36,14 +36,14 @@ Escolher o formato que seja mais cômodo para criar um script que importará tod
 - XLSX
 - CSV
 
-Nesse passo o importante é desenvolver um código que consiga processar o arquivo e subir toda a informação no banco de datos para realizar futuros testes dos endpoints da REST API.
+Nesse passo o importante é desenvolver um código que consiga processar o arquivo e subir toda a informação no banco de dados para realizar futuros testes dos endpoints da REST API.
 
 
 ### A REST API
 
 Na REST API teremos um CRUD com os seguintes endpoints:
 
- - `GET /`: Detalhes da API, se conexão leitura e escritura com a base de datos está OK, horário da última vez que o CRON foi executado, tempo online e uso de memória.
+ - `GET /`: Detalhes da API, se conexão leitura e escritura com a base de dados está OK, horário da última vez que o CRON foi executado, tempo online e uso de memória.
  - `PUT /products/:code`: Será responsável por receber atualizações do Projeto Web
  - `DELETE /products/:code`: Mudar o status do produto para `trash`
  - `GET /products/:code`: Obter a informação somente de um produto da base de dados
