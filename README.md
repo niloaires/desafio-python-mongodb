@@ -20,7 +20,7 @@ O projeto tem como objetivo dar suporte a equipe de nutricionistas da empresa Fi
 - Criar um banco de dados no Mongo Atlas: https://www.mongodb.com/cloud/atlas
 - Criar uma REST API usando Django com as melhores práticas de desenvolvimento
 - Integrar a API com o banco de dados MongoDB criado no Atlas para persistir os dados
-- Recomendável usar (PyMongo)[https://api.mongodb.com/python/current/] 
+- Recomendável usar [PyMongo](https://api.mongodb.com/python/current/)
 - Desenvolver Testes Unitários
 
 ### Modelo de Dados:
@@ -29,7 +29,7 @@ Para a definição do modelo, consultar o arquivo [products.json](./products.jso
 
 ### Importar Dados:
 
-Antes de seguir com o desafio, devemos exportar uma lista de produtos da base do Open Food Facts: (Open Food Desafio)[https://br.openfoodfacts.org/cgi/search.pl?action=process&sort_by=unique_scans_n&page_size=500&axis_x=energy-kj&axis_y=products_n&action=display]
+Antes de seguir com o desafio, devemos exportar uma lista de produtos da base do Open Food Facts: [Open Food Desafio](https://br.openfoodfacts.org/cgi/search.pl?action=process&sort_by=unique_scans_n&page_size=500&axis_x=energy-kj&axis_y=products_n&action=display)
 
 Escolher o formato que seja mais cômodo para criar um script que importará todos os dados ao mongo, o Open Food tem os seguintes formatos:
 
