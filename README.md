@@ -23,7 +23,7 @@ O projeto tem como objetivo dar suporte a equipe de nutricionistas da empresa Fi
 - Recomendável usar (PyMongo)[https://api.mongodb.com/python/current/] 
 - Desenvolver Testes Unitários
 
-### Modelo de Datos:
+### Modelo de Dados:
 
 Para a definição do modelo, consultar o arquivo [products.json](./products.json) que foi exportado do Open Food Facts. 
 
