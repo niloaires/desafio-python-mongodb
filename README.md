@@ -25,24 +25,19 @@ O projeto tem como objetivo dar suporte a equipe de nutricionistas da empresa Fi
 
 ### Modelo de Datos:
 
-Para a definição do modelo, consultar o arquivo [products.json](./products.json) que foi exportado do Open Food Facts, um detalhe importante é que temos dois campos personalizados para poder fazer o controle interno do sistema e que deverão ser aplicados em todos os alimentos no momento da importação, os campos são:
+Para a definição do modelo, consultar o arquivo [products.json](./products.json) que foi exportado do Open Food Facts. 
 
-- `imported_t`: campo do tipo Date com a dia e hora que foi importado;
-- `status`: campo do tipo Enum com os possíveis valores draft, trash e published;
+### Importar Dados:
 
-### Sistema do CRON
+Antes de seguir com o desafio, devemos exportar uma lista de produtos da base do Open Food Facts: (Open Food Desafio)[https://br.openfoodfacts.org/cgi/search.pl?action=process&sort_by=unique_scans_n&page_size=500&axis_x=energy-kj&axis_y=products_n&action=display]
 
-Para prosseguir com o desafio, precisaremos criar na API um sistema de atualização que vai importar os dados para MongoDB com a versão mais recente do [Open Food Facts](https://br.openfoodfacts.org/data) uma vez ao día. Adicionar aos arquivos de configuração o melhor horário para executar a importação.
+Escolher o formato que seja mais cômodo para criar um script que importará todos os dados ao mongo, o Open Food tem os seguintes formatos:
 
-A lista de arquivos do Open Food, pode ser encontrada em: 
+- XSLX
+- CSV
 
-- https://static.openfoodfacts.org/data/delta/index.txt
+Nesse passo o importante é desenvolver um código que consiga processar o arquivo e subir toda a informação no banco de datos para realizar futuros testes dos endpoints da REST API.
 
-Onde cada linha representa um arquivo que está disponível em https://static.openfoodfacts.org/data/delta/{filename}. O nome do arquivo contém o timestamp UNIX da primeira e última alteração contida no arquivo JSON, para que os arquivos possam ser importados (após extracção) em ordem alfabética.
-
-É recomendável utilizar uma Collection secundária para controlar os históricos das importações e facilitar a validação durante a execução.
-
-Nota: Importante lembrar que todos os dados deverão ter os campos personalizados `imported_t` e `status`.
 
 ### A REST API
 
