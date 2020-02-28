@@ -33,7 +33,7 @@ Antes de seguir com o desafio, devemos exportar uma lista de produtos da base do
 
 Escolher o formato que seja mais cômodo para criar um script que importará todos os dados ao mongo, o Open Food tem os seguintes formatos:
 
-- XSLX
+- XLSX
 - CSV
 
 Nesse passo o importante é desenvolver um código que consiga processar o arquivo e subir toda a informação no banco de datos para realizar futuros testes dos endpoints da REST API.
