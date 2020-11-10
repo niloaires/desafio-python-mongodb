@@ -1,5 +1,4 @@
-# Python Challenge (Back-End Focus)
-
+# Python Challenge 20200205
 
 ## Introdução
 
@@ -65,9 +64,20 @@ Para isso deveremos configurar:
 - Dockerfile
 - Docker compose para executar o projeto em ambiente local
 
+## Finalização 
 
-## Readme do Repositório
- 
-- Deve conter o título de cada projeto
-- Uma descrição de uma frase
-- Como instalar e usar o projeto (instruções)
+Avisar sobre a finalização e enviar para correção em: [https://coodesh.com/review-challenge](https://coodesh.com/review-challenge) 
+Após essa etapa será marcado a apresentação/correção do projeto.
+
+## Instruções para a Apresentação: 
+
+1. Será necessário compartilhar a tela durante a vídeo chamada;
+2. Deixe todos os projetos de solução previamente abertos em seu computador antes de iniciar a chamada;
+3. Deixe os ambientes configurados e prontos para rodar; 
+4. Prepara-se pois você será questionado sobre cada etapa e decisão do Challenge;
+5. Prepare uma lista de perguntas, dúvidas, sugestões de melhorias e feedbacks (caso tenha).
+
+
+## Suporte
+
+Use o nosso canal no slack: http://bit.ly/32CuOMy para tirar dúvidas sobre o processo ou envie um e-mail para contato@coodesh.com. 
