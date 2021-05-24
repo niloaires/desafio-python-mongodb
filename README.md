@@ -9,7 +9,7 @@ O projeto tem como objetivo dar suporte a equipe de nutricionistas da empresa Fi
 ### Obrigatório
  
 - Trabalhar em um FORK deste repositório em seu usuário;
-- O projeto back-end deverá ser desenvolvido usando Python com o [Django Rest Framework](https://www.django-rest-framework.org);
+- O projeto back-end deverá ser desenvolvido usando Python utilizando um dos frameworks: [Django Rest Framework](https://www.django-rest-framework.org) ou [Flask](https://flask.palletsprojects.com/en/1.1.x/);
 - Configurar os testes usando Pytest ou algum de sua preferência;
 - Documentação para configuração do projeto em ambientes de produção (instalações, executar, referências e etc);
  
@@ -48,21 +48,13 @@ Na REST API teremos um CRUD com os seguintes endpoints:
  - `GET /products/:code`: Obter a informação somente de um produto da base de dados
  - `GET /products`: Listar todos os produtos da base de dados, adicionar sistema de paginação para não sobrecarregar o `REQUEST`.
 
-Ao terminar os endpoints, configurar os testes usando Pytest ou algum de sua preferência.
-
 
 ### Extras
 
-Depois de um árduo trabalho de desenvolvimento na API chegou a hora mais esperada, 
-o lançamento do projeto, é uma das partes mais motivadoras verdade? Então, a equipe de administração de 
-sistemas precisará dos mínimos detalhes para configurar o projeto em produção, 
-por isso é sua responsabilidade documentar todo o fluxo e facilitar a configuração dos dois projetos com 
-tecnologias chaves para rodar em ambientes de Cloud Computing. 
-
-Para isso deveremos configurar:
-
-- Dockerfile
-- Docker compose para executar o projeto em ambiente local
+- **Diferencial 1** Escrever Unit Test para os endpoints da REST API
+- **Diferencial 2** Executar o projeto usando Docker
+- **Diferencial 3** Escrever um esquema de segurança utilizando `API KEY` nos endpoints. Ref: https://learning.postman.com/docs/sending-requests/authorization/#api-key
+- **Diferencial 4** Descrever a documentação da API utilizando o conceito de Open API 3.0;
 
 
 ## Readme do Repositório
