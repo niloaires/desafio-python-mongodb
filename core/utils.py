@@ -1,6 +1,5 @@
 import os
 import csv
-import json
 import pymongo
 from decouple import config
 from rest_framework import status

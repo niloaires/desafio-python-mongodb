@@ -19,7 +19,9 @@ class ApiTeste(TestCase):
 
 
     def teste_get_code(self):
-        response=self.client.get('/api/products/{}'.format(self.item.code))
+        code=self.item.code
+
+        response=self.client.get('/api/products/{}'.format(code))
         retorno=json.loads(response.content)
         self.assertEqual(self.item.code, retorno['code'])
 

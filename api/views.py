@@ -9,13 +9,10 @@ from core.models import ProdutosModel
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.views import APIView
 import pymongo
-from django.db import connections
-from django.db.utils import OperationalError
-from decouple import config
-#from django_cron.models import CronJobLog
-# Create your views here.
 
-TOTAL_SOMA=0
+from decouple import config
+
+# Create your views here.
 class ApiViewSet(APIView):
     permission_classes = [AllowAny]
 
@@ -46,7 +43,7 @@ class ProdutosViewSet(viewsets.ModelViewSet):
     serializer_class = ProdutosSerializer
     pagination_class = paginaCaoPersonalizada
     parser_classes = [MultiPartParser, FormParser]
-    permission_classes = (IsAuthenticated,)
+    permission_classes = (AllowAny,)
 
     def create(self, request, *args, **kwargs):
         arquivo=self.request.FILES['arquivo']
