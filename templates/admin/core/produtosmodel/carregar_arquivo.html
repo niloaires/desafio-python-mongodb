@@ -1,0 +1,35 @@
+{% extends 'admin/base.html' %}
+{% block content %}
+    <div>
+    <h2>Carregar pilha de informações</h2>
+    <ul class="errorlist">
+  {% if formulario.non_field_errors %}
+    <li>{{ formulario.non_field_errors }}</li>
+  {% endif %}
+  {% for campo in formulario %}
+    {% if campo.errors %}
+      <li>
+        <ul class="errorlist">
+          {% for erro in campo.errors %}
+            <li>{{ erro }}</li>
+          {% endfor %}
+        </ul>
+      </li>
+    {% endif %}
+  {% endfor %}
+</ul>
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {% for campo in formulario %}
+            <div class="form-row">
+                {{ campo }}
+            </div>
+            <small>{{ campo.help_text }}</small>
+        {% endfor %}
+
+    <div class="form-row">
+        <button class="button" type="submit">Enviar arquivo</button>
+    </div>
+    </form>
+    </div>
+{% endblock %}

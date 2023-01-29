@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="491afa59-1233-45f3-9091-dec0ff4155b3" name="Changes" comment="Implemento do decouple para proteção dos dados de segurança do MongoDB, implemento do esquema de autenticação por Token, desenvolvimento do Dockerfile." />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2KvPJpX5LRpSRP4yxYPdjNsLfPp" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "E:/PythonDev/challenge",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\PythonDev\challenge\python-challenge-20200205\challenge\testes" />
+      <recent name="E:\PythonDev\challenge\python-challenge-20200205" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\PythonDev\challenge\python-challenge-20200205\core" />
+      <recent name="E:\PythonDev\challenge\python-challenge-20200205\challenge" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Django Server.ServidorLocal">
+    <configuration name="Test: challenge.testes.testes_api.ApiTeste" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="python-challenge-20200205" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="challenge.testes.testes_api.ApiTeste" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test: challenge.testes.testes_api.ApiTeste.test_put_code" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="python-challenge-20200205" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="challenge.testes.testes_api.ApiTeste.test_put_code" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test: challenge.testes.testes_api.ApiTeste.teste_carregar_csv" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="python-challenge-20200205" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="challenge.testes.testes_api.ApiTeste.teste_carregar_csv" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test: challenge.testes.testes_model.ProdutosTesteCase" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="python-challenge-20200205" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="challenge.testes.testes_model.ProdutosTesteCase" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test: challenge.testes.testes_model.ProdutosTesteCase.teste_link_detalhes_api" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="python-challenge-20200205" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="challenge.testes.testes_model.ProdutosTesteCase.teste_link_detalhes_api" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="ServidorLocal" type="Python.DjangoServer" factoryName="Django server">
+      <module name="python-challenge-20200205" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="challenge.settings" />
+      </envs>
+      <option name="SDK_HOME" value="E:\PythonDev\challenge\Scripts\python.exe" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Django Server.ServidorLocal" />
+      <item itemvalue="Django tests.Test: challenge.testes.testes_api.ApiTeste" />
+      <item itemvalue="Django tests.Test: challenge.testes.testes_api.ApiTeste.test_put_code" />
+      <item itemvalue="Django tests.Test: challenge.testes.testes_api.ApiTeste.teste_carregar_csv" />
+      <item itemvalue="Django tests.Test: challenge.testes.testes_model.ProdutosTesteCase" />
+      <item itemvalue="Django tests.Test: challenge.testes.testes_model.ProdutosTesteCase.teste_link_detalhes_api" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Django tests.Test: challenge.testes.testes_api.ApiTeste.test_put_code" />
+        <item itemvalue="Django tests.Test: challenge.testes.testes_api.ApiTeste" />
+        <item itemvalue="Django tests.Test: challenge.testes.testes_api.ApiTeste.teste_carregar_csv" />
+        <item itemvalue="Django tests.Test: challenge.testes.testes_model.ProdutosTesteCase" />
+        <item itemvalue="Django tests.Test: challenge.testes.testes_model.ProdutosTesteCase.teste_link_detalhes_api" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="491afa59-1233-45f3-9091-dec0ff4155b3" name="Changes" comment="" />
+      <created>1674852014072</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1674852014072</updated>
+      <workItem from="1674852015718" duration="6715000" />
+      <workItem from="1674867810593" duration="33927000" />
+      <workItem from="1674984112539" duration="13843000" />
+      <workItem from="1675000510486" duration="1897000" />
+    </task>
+    <task id="LOCAL-00001" summary="Inserção de testes Unitários e Read.me">
+      <created>1674918598017</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1674918598017</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Implemento do decouple para proteção dos dados de segurança do MongoDB, implemento do esquema de autenticação por Token, desenvolvimento do Dockerfile.">
+      <created>1674999621086</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1674999621086</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Implemento do decouple para proteção dos dados de segurança do MongoDB, implemento do esquema de autenticação por Token, desenvolvimento do Dockerfile.">
+      <created>1674999914827</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1674999914827</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Implemento do decouple para proteção dos dados de segurança do MongoDB, implemento do esquema de autenticação por Token, desenvolvimento do Dockerfile.">
+      <created>1675000082429</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1675000082429</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Inserção de testes Unitários e Read.me" />
+    <MESSAGE value="Implemento do decouple para proteção dos dados de segurança do MongoDB, implemento do esquema de autenticação por Token, desenvolvimento do Dockerfile." />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemento do decouple para proteção dos dados de segurança do MongoDB, implemento do esquema de autenticação por Token, desenvolvimento do Dockerfile." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/challenge/testes/testes_model.py</url>
+          <line>7</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/challenge/testes/testes_model.py</url>
+          <line>12</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/api/views.py</url>
+          <line>29</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/api/views.py</url>
+          <line>26</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/python_challenge_20200205$Test__challenge_testes_testes_api_ApiTeste_test_put_code.coverage" NAME="Test: challenge.testes.testes_api.ApiTeste.test_put_code Coverage Results" MODIFIED="1674918196221" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/python_challenge_20200205$Test__challenge_testes_testes_model_ProdutosTesteCase.coverage" NAME="Test: challenge.testes.testes_model.ProdutosTesteCase Coverage Results" MODIFIED="1674913289515" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/python_challenge_20200205$settings.coverage" NAME="settings Coverage Results" MODIFIED="1674897434467" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/challenge" />
+    <SUITE FILE_PATH="coverage/python_challenge_20200205$Test__challenge_testes_testes_model_ProdutosTesteCase_teste_link_detalhes_api.coverage" NAME="Test: challenge.testes.testes_model.ProdutosTesteCase.teste_link_detalhes_api Coverage Results" MODIFIED="1674911365929" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/python_challenge_20200205$Test__challenge_testes_testes_api_ApiTeste.coverage" NAME="Test: challenge.testes.testes_api.ApiTeste Coverage Results" MODIFIED="1674915911728" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/python_challenge_20200205$Test__challenge_testes_testes_model_ProdutosTesteCase_test_return_str.coverage" NAME="Test: challenge.testes.testes_model.ProdutosTesteCase.test_return_str Coverage Results" MODIFIED="1674910969232" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/python_challenge_20200205$Test__challenge_testes_testes_api_ApiTeste_teste_carregar_csv.coverage" NAME="Test: challenge.testes.testes_api.ApiTeste.teste_carregar_csv Coverage Results" MODIFIED="1674914855517" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+  </component>
+</project>
