@@ -1,83 +1,139 @@
-# Python Challenge 20200205
+# API Rest - Open food facts by Nilo Aires Jr.
 
-## Introdução
+Aplicação em Python / django rest_framework que captura dados de um arquivo .cvs e os insere na base de dados, observando o modelo exigido, disponibilizando uma API REST para consumo de dados.
 
-Nesse desafio trabalharemos no desenvolvimento de uma REST API para utilizar os dados do projeto Open Food Facts, que é um banco de dados aberto com informação nutricional de diversos produtos alimentícios.
+​
 
-O projeto tem como objetivo dar suporte a equipe de nutricionistas da empresa Fitness Foods LC para que eles possam revisar de maneira rápida a informação nutricional dos alimentos que os usuários enviam pela aplicação móvel.
+### Configuração
 
-### Obrigatório
- 
-- Trabalhar em um FORK deste repositório em seu usuário;
-- O projeto back-end deverá ser desenvolvido usando Python utilizando um dos frameworks: [Django Rest Framework](https://www.django-rest-framework.org) ou [Flask](https://flask.palletsprojects.com/en/1.1.x/);
-- Configurar os testes usando Pytest ou algum de sua preferência;
-- Documentação para configuração do projeto em ambientes de produção (instalações, executar, referências e etc);
- 
+* Clone este repositório
 
-## O projeto
- 
-- Criar um banco de dados MongoDB usando Atlas: https://www.mongodb.com/cloud/atlas ou algum Banco de Dados SQL se não sentir confortável com NoSQL;
-- Criar uma REST API usando Django Rest Framework com as melhores práticas de desenvolvimento
-- Integrar a API com o banco de dados criado para persistir os dados
-- Recomendável usar Drivers oficiais para integração com o DB
-- Desenvolver Testes Unitários
+* Em uma maquina com o Python 3 crie um ambiente virtual
 
-### Modelo de Dados:
+* Instale as dependências
 
-Para a definição do modelo, consultar o arquivo [products.json](./products.json) que foi exportado do Open Food Facts. 
+* Inicie o servidor
 
-### Importar Dados:
+​
 
-Antes de seguir com o desafio, devemos exportar uma lista de produtos da base do Open Food Facts: [Open Food Desafio](https://br.openfoodfacts.org/cgi/search.pl?action=process&sort_by=unique_scans_n&page_size=500&axis_x=energy-kj&axis_y=products_n&action=display)
+```
 
-Escolher o formato que seja mais cômodo para criar um script que importará todos os dados ao mongo, o Open Food tem os seguintes formatos:
+git clone https://lab.coodesh.com/nilo_aires/python-challenge-20200205.git
 
-- XLSX
-- CSV
+python -m venv .venv
 
-Nesse passo o importante é desenvolver um código que consiga processar o arquivo e subir toda a informação no banco de dados para realizar futuros testes dos endpoints da REST API.
+source .venv/bin/activate
 
+pip install -r requirements.txt
 
-### A REST API
+python manage.py runserver
 
-Na REST API teremos um CRUD com os seguintes endpoints:
+```
 
- - `GET /`: Detalhes da API, se conexão leitura e escritura com a base de dados está OK, horário da última vez que o CRON foi executado, tempo online e uso de memória.
- - `PUT /products/:code`: Será responsável por receber atualizações do Projeto Web
- - `DELETE /products/:code`: Mudar o status do produto para `trash`
- - `GET /products/:code`: Obter a informação somente de um produto da base de dados
- - `GET /products`: Listar todos os produtos da base de dados, adicionar sistema de paginação para não sobrecarregar o `REQUEST`.
+Esta ação deverá iniciar o servidor na porta **8000**.
 
+##Recursosos  disponíveis
 
-### Extras
+​
 
-- **Diferencial 1** Escrever Unit Test para os endpoints da REST API
-- **Diferencial 2** Executar o projeto usando Docker
-- **Diferencial 3** Escrever um esquema de segurança utilizando `API KEY` nos endpoints. Ref: https://learning.postman.com/docs/sending-requests/authorization/#api-key
-- **Diferencial 4** Descrever a documentação da API utilizando o conceito de Open API 3.0;
+```
 
+GET /api/ (Exibe o status da API)
 
-## Readme do Repositório
- 
-- Deve conter o título de cada projeto
-- Uma descrição de uma frase
-- Como instalar e usar o projeto (instruções)
-- Não esqueça o [.gitignore](https://www.toptal.com/developers/gitignore)
- 
-## Finalização 
+POST /api/products (Remete arquivo no formato .csv para o Banco de Dados)
 
-Avisar sobre a finalização e enviar para correção em: [https://coodesh.com/review-challenge](https://coodesh.com/review-challenge) 
-Após essa etapa será marcado a apresentação/correção do projeto.
+GET /api/products (Lista todos os produtos com o status diferente de 'trash', paginados de 10 em 10)
 
-## Instruções para a Apresentação: 
+GET /api/products/:code (Retorna detalhes do produto com base no campo 'code')
 
-1. Será necessário compartilhar a tela durante a vídeo chamada;
-2. Deixe todos os projetos de solução previamente abertos em seu computador antes de iniciar a chamada;
-3. Deixe os ambientes configurados e prontos para rodar; 
-4. Prepara-se pois você será questionado sobre cada etapa e decisão do Challenge;
-5. Prepare uma lista de perguntas, dúvidas, sugestões de melhorias e feedbacks (caso tenha).
+PUT /api/products/:code (Atualiza atributos do produto com base no campo 'code')
 
+DELETE /api/products/:code (Altera o atributo status para 'trash')
 
-## Suporte
+```
 
-Use o nosso canal no slack: http://bit.ly/32CuOMy para tirar dúvidas sobre o processo ou envie um e-mail para contato@coodesh.com. 
+​
+
+#### [GET /api/]
+
+Apresenta informações referentes ao Status da API, disponibilidade, conexão com a base de dados e outros aspectos.
+
+​
+
+#### [POST /api/products/]
+
+Recebe um arquivo no fortato **.csv**, converte cada linha em um novo objeto, avaliando o campo 'lc' do arquivo para definir sua localidade e definir o nome do produto (quando houver), por fim, alimenta a base de dados, respeitando o atributo code dos registros já existentes.
+
+​
+
+#### [GET /api/products/]
+
+Recupera a lista de objetos com o atrituto status diferente de 'trash' existentes na base de dados, paginando-os de 10 em 10 para evitar sobrecarga na requisição.
+
+####[GET /api/products/:code]
+
+Recupera os dados de um produto específico, identificado por seu atributo `code`
+
+API Rest - Open food facts by Nilo Aires Jr.
+
+Aplicação em Python / django rest_framework que captura dados de um arquivo .cvs e os insere na base de dados, observando o modelo exigido, disponibilizando uma API REST para consumo de dados.
+Configuração
+
+    Clone este repositório
+    Em uma maquina com o Python 3 crie um ambiente virtual
+    Instale as dependências
+    Inicie o servidor
+
+    git clone https://lab.coodesh.com/nilo_aires/python-challenge-20200205.git
+    python -m venv .venv
+    source .venv/bin/activate
+    pip install -r requirements.txt
+    python manage.py runserver
+
+Esta ação deverá iniciar o servidor na porta 8000.
+Recursosos disponíveis
+
+    GET /api/ (Exibe o status da API)
+    POST /api/products (Remete arquivo no formato .csv para o Banco de Dados)
+    GET /api/products (Lista todos os produtos com o status diferente de 'trash', paginados de 10 em 10)
+    GET /api/products/:code (Retorna detalhes do produto com base no campo 'code')
+    PUT /api/products/:code (Atualiza atributos do produto com base no campo 'code')
+    DELETE /api/products/:code (Altera o atributo status para 'trash')
+
+[GET /api/]
+
+Apresenta informações referentes ao Status da API, disponibilidade, conexão com a base de dados e outros aspectos.
+[POST /api/products/]
+
+Recebe um arquivo no fortato .csv, converte cada linha em um novo objeto, avaliando o campo ‘lc’ do arquivo para definir sua localidade e definir o nome do produto (quando houver), por fim, alimenta a base de dados, respeitando o atributo code dos registros já existentes.
+[GET /api/products/]
+
+Recupera a lista de objetos com o atrituto status diferente de ‘trash’ existentes na base de dados, paginando-os de 10 em 10 para evitar sobrecarga na requisição.
+[GET /api/products/:code]
+
+Recupera os dados de um produto específico, identificado por seu atributo code
+
+    Response 200 (application/json)
+    Quando o registro foi econtrado.
+
+    Response 404 (application/json)
+    Quando o registro não foi encontrado.
+
+[PUT /api/products/:code]
+
+Altera dados de um produto específico, identificado por seu atributo code
+
+    Response 200 (application/json)
+    Quando o registro foi econtrado.
+
+[DELETE /api/products/:code]
+
+Altera o atributo status de um objeto identificado pelo atributo code para “trash”`
+
+    Response 200 (application/json)
+    Quando o registro foi econtrado e alterado.
+
+Ultimas considerações
+
+Com exceção do endpoit /, os demais exigem o uso de Token no header Authorization
+Example
