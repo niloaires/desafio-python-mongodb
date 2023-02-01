@@ -9,7 +9,7 @@ from core.models import ProdutosModel
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.views import APIView
 import pymongo
-
+import psutil
 from decouple import config
 
 # Create your views here.
@@ -17,24 +17,33 @@ class ApiViewSet(APIView):
     permission_classes = [AllowAny]
 
     def get(self, request):
-        bancoDisponivel=None
-        leituraDisponivel=None
-        escritaDisponivel=None
-
         conexaoMongo=pymongo.MongoClient(config('ATLAS_CONEXAO'))
 
         try:
             conexaoMongo.server_info()
             bancoDisponivel=True
+            leituraDisponivel=True
+            db=conexaoMongo['challenge']
+            if db['teste']:
+                escritaDisponivel=True
+                db['teste'].drop()
+            else:
+                escritaDisponivel=False
 
         except:
             bancoDisponivel=False
+            leituraDisponivel = False
+            escritaDisponivel=False
 
-
+        #Memória
+        usoCPU=str("{} %".format(psutil.cpu_percent(4)))
+        usoMemoria=psutil.virtual_memory()
         content={
             'Disponibilidade do banco':bancoDisponivel,
             'Autorização de Leitura':leituraDisponivel,
             'Autorização de Escrita':escritaDisponivel,
+            'Percentual de uso da CPU:':usoCPU,
+            'Uso da memória': str("{} %".format(usoMemoria.percent))
 
         }
         return Response(content)
@@ -46,7 +55,7 @@ class ProdutosViewSet(viewsets.ModelViewSet):
     permission_classes = (AllowAny,)
 
     def create(self, request, *args, **kwargs):
-        arquivo=self.request.FILES['arquivo']
+        arquivo=request.FILES['arquivo']
         enviarParaBanco=Importacao(arquivo)
         if enviarParaBanco:
             content = {'Dados enviados.'' {} registros foram enviados para o Banco de Dados'.format(
