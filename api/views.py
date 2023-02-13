@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from rest_framework import viewsets, status
 from rest_framework.parsers import MultiPartParser, FormParser
-from api.paginador import paginaCaoPersonalizada
+from api.paginador import PaginacaoPersinalizada
 from rest_framework.response import Response
 from api.serializadores import ProdutosSerializer
 from core.utils import Importacao
@@ -36,33 +36,33 @@ class ApiViewSet(APIView):
             escritaDisponivel=False
 
         #Memória
-        usoCPU=str("{} %".format(psutil.cpu_percent(4)))
+        usoCPU="{} %".format(psutil.cpu_percent(4))
         usoMemoria=psutil.virtual_memory()
         content={
             'Disponibilidade do banco':bancoDisponivel,
             'Autorização de Leitura':leituraDisponivel,
             'Autorização de Escrita':escritaDisponivel,
             'Percentual de uso da CPU:':usoCPU,
-            'Uso da memória': str("{} %".format(usoMemoria.percent))
+            'Uso da memória': "{} %".format(usoMemoria.percent)
 
         }
         return Response(content)
 
 class ProdutosViewSet(viewsets.ModelViewSet):
     serializer_class = ProdutosSerializer
-    pagination_class = paginaCaoPersonalizada
+    pagination_class = PaginacaoPersinalizada
     parser_classes = [MultiPartParser, FormParser]
     permission_classes = (AllowAny,)
 
     def create(self, request, *args, **kwargs):
-        arquivo=request.FILES['arquivo']
-        enviarParaBanco=Importacao(arquivo)
+        file=request.FILES['file']
+        enviarParaBanco=Importacao(file)
         if enviarParaBanco:
             content = {'Dados enviados.'' {} registros foram enviados para o Banco de Dados'.format(
             enviarParaBanco.remeterCsv())}
             return Response(content, status=status.HTTP_200_OK)
         else:
-            content={'Houve um problema com sua requisição':'Verifique seu arquivo'}
+            content={'Houve um problema com sua requisição':'Verifique seu file'}
             return Response(content, status=status.HTTP_400_BAD_REQUEST)
 
     def get_queryset(self):

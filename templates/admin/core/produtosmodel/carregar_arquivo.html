@@ -6,11 +6,11 @@
   {% if formulario.non_field_errors %}
     <li>{{ formulario.non_field_errors }}</li>
   {% endif %}
-  {% for campo in formulario %}
-    {% if campo.errors %}
+  {% for field in formulario %}
+    {% if field.errors %}
       <li>
         <ul class="errorlist">
-          {% for erro in campo.errors %}
+          {% for erro in field.errors %}
             <li>{{ erro }}</li>
           {% endfor %}
         </ul>
@@ -20,15 +20,15 @@
 </ul>
     <form action="" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
-        {% for campo in formulario %}
+        {% for field in formulario %}
             <div class="form-row">
-                {{ campo }}
+                {{ field }}
             </div>
-            <small>{{ campo.help_text }}</small>
+            <small>{{ field.help_text }}</small>
         {% endfor %}
 
     <div class="form-row">
-        <button class="button" type="submit">Enviar arquivo</button>
+        <button class="button" type="submit">Enviar file</button>
     </div>
     </form>
     </div>

@@ -1,6 +1,6 @@
 # API Rest - Open food facts by Nilo Aires Jr.
 
-Aplicação em Python / django rest_framework que captura dados de um arquivo .cvs e os insere na base de dados, observando o modelo exigido, disponibilizando uma API REST para consumo de dados.
+Aplicação em Python / django rest_framework que captura dados de um file .cvs e os insere na base de dados, observando o modelo exigido, disponibilizando uma API REST para consumo de dados.
 
 ​
 
@@ -40,13 +40,13 @@ Esta ação deverá iniciar o servidor na porta **8000**.
 
 GET /api/ (Exibe o status da API)
 
-POST /api/products (Remete arquivo no formato .csv para o Banco de Dados)
+POST /api/products (Remete file no formato .csv para o Banco de Dados)
 
 GET /api/products (Lista todos os produtos com o status diferente de 'trash', paginados de 10 em 10)
 
-GET /api/products/:code (Retorna detalhes do produto com base no campo 'code')
+GET /api/products/:code (Retorna detalhes do produto com base no field 'code')
 
-PUT /api/products/:code (Atualiza atributos do produto com base no campo 'code')
+PUT /api/products/:code (Atualiza atributos do produto com base no field 'code')
 
 DELETE /api/products/:code (Altera o atributo status para 'trash')
 
@@ -62,7 +62,7 @@ Apresenta informações referentes ao Status da API, disponibilidade, conexão c
 
 #### [POST /api/products/]
 
-Recebe um arquivo no fortato **.csv**, converte cada linha em um novo objeto, avaliando o campo 'lc' do arquivo para definir sua localidade e definir o nome do produto (quando houver), por fim, alimenta a base de dados, respeitando o atributo code dos registros já existentes.
+Recebe um file no fortato **.csv**, converte cada line em um novo objeto, avaliando o field 'lc' do file para definir sua localidade e definir o nome do produto (quando houver), por fim, alimenta a base de dados, respeitando o atributo code dos registros já existentes.
 
 ​
 
